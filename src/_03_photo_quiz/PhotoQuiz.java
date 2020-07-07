@@ -26,15 +26,15 @@ public class PhotoQuiz {
 		// 1. find an image on the internet, and put its URL in a String
 		// variable (from your browser, right click on the image, and select
 		// “Copy Image Address”)
-
+		String pythonString = "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1024px-Python-logo-notext.svg.png";
 		// 2. create a variable of type "Component" that will hold your image
-
+		Component python = null;
 		// 3. use the "createImage()" method below to initialize your Component
-
+		createImage(pythonString);
 		// 4. add the image to the quiz window
-
+		quizWindow.add(python);
 		// 5. call the pack() method on the quiz window
-
+		
 		// 6. ask a question that relates to the image
 
 		// 7. print "CORRECT" if the user gave the right answer
