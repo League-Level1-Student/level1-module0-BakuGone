@@ -30,20 +30,27 @@ public class PhotoQuiz {
 		// 2. create a variable of type "Component" that will hold your image
 		Component python = null;
 		// 3. use the "createImage()" method below to initialize your Component
-		createImage(pythonString);
+		python.createImage();
 		// 4. add the image to the quiz window
 		quizWindow.add(python);
 		// 5. call the pack() method on the quiz window
-		
+		quizWindow.pack();
 		// 6. ask a question that relates to the image
-
+		String correctOrNot = JOptionPane.showInputDialog("What programming language is this?");
 		// 7. print "CORRECT" if the user gave the right answer
-
+		if (correctOrNot.equalsIgnoreCase("python")) {
+			
+			JOptionPane.showMessageDialog(null, "Correct!");
+		}
+		else {
+			
+			JOptionPane.showMessageDialog(null, "Incorrect.");
+		}
 		// 8. print "INCORRECT" if the answer is wrong
 
 		// 9. remove the component from the quiz window (you may not see the
 		// effect of this until step 12)
-
+		quizWindow.remove(python);
 		// 10. find another image and create it (might take more than one line
 		// of code)
 

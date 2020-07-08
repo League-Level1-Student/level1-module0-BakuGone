@@ -21,10 +21,10 @@ public class BodyPartQuiz {
 	// package,or if you prefer, get celebrity photos from the Internet,
 	// place them in the default package, and change the names below.
 
-	String firstImage = "src/_05_body_part_quiz/arnold.jpeg";
-	String secondImage = "src/_05_body_part_quiz/leonardo.jpeg";
-	String thirdImage = "src/_05_body_part_quiz/morgan.jpeg";
-	String fourthImage = "src/_05_body_part_quiz/jack.jpeg";
+	String firstImage = "src/_05_body_part_quiz/taylor.jpg";
+	String secondImage = "src/_05_body_part_quiz/billie.jpeg";
+	String thirdImage = "src/_05_body_part_quiz/ellie.jpg";
+	String fourthImage = "src/_05_body_part_quiz/robin.jpg";
 
 	JFrame window = new JFrame();
 	JPanel panel = new JPanel();
@@ -42,7 +42,7 @@ public class BodyPartQuiz {
 
 		// 3. Change the size of the window so that you can only see part of the
 		// image.
-		window.setSize(500, 500);
+		window.setSize(200, 200);
 
 		showNextImage();
 
@@ -50,26 +50,72 @@ public class BodyPartQuiz {
 
 	private void startQuiz() {
 
-		// 1. Make an int variable to hold the score.
+		int score = 0;
+		initializeGui();
+		String guessTaylor = JOptionPane.showInputDialog("Who is this person?");
 
-		// 2. Set the size of the window in the initializeGui() method 
+		if (guessTaylor.equalsIgnoreCase("taylor swift")) {
+			
+			score = score + 1;
+			JOptionPane.showMessageDialog(null, "Correct! Your score is " + score);
+		}
+		
+		else {
+			
+			JOptionPane.showMessageDialog(null, "That is incorrect. The person was Taylor Swift. Your score is " + score);
 
-		// 4. Ask the user who this person is and store their answer
-		String guess = JOptionPane.showInputDialog("who is this?");
+		}
 
-		// 5. Check their answer. If they guessed correctly:
-		// -- Tell them they are right and increase the score by 1
-
-		// 6. Otherwise:
-		// -- Tell them they are wrong and who the person is
-
-		// 7. Use the showNextImage() method below to get the next image
 		showNextImage();
 
-		// 8. .... repeat 4-7 for all your images.....
+		String guessBillie = JOptionPane.showInputDialog("Who is this person?");
 
-		// 9. Show them their current score
+		if (guessBillie.equalsIgnoreCase("billie eilish")) {
+			
+			score = score + 1;
+			JOptionPane.showMessageDialog(null, "Correct! Your score is " + score);
+		}
+		
+		else {
+			
+			JOptionPane.showMessageDialog(null, "That is incorrect. The person was Billie Eilish. Your score is " + score);
 
+		}
+
+		showNextImage();
+		
+		String guessEllie = JOptionPane.showInputDialog("Who is this person?");
+
+		if (guessEllie.equalsIgnoreCase("Ellie Goulding")) {
+			
+			score = score + 1;
+			JOptionPane.showMessageDialog(null, "Correct! Your score is " + score);
+		}
+		
+		else {
+			
+			JOptionPane.showMessageDialog(null, "That is incorrect. The person was Ellie Goulding. Your score is " + score);
+
+		}
+		
+		showNextImage();
+		
+		String guessRobin = JOptionPane.showInputDialog("Who is this person?");
+
+		if (guessRobin.equalsIgnoreCase("Cavetown")) {
+			
+			score = score + 1;
+			JOptionPane.showMessageDialog(null, "Correct! Your score is " + score);
+		}
+		
+		else {
+			
+			JOptionPane.showMessageDialog(null, "That is incorrect. The person was Cavetown. Your score is " + score);
+
+		}
+		
+		JOptionPane.showMessageDialog(null, "You got " + score + "/4. Nice job!");
+		System.exit(0);
 	}
 
 	public void showNextImage() {
