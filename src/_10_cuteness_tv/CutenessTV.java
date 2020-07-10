@@ -16,6 +16,7 @@ public class CutenessTV implements ActionListener {
 	JButton unicornButton = new JButton();
 	JPanel panel = new JPanel();
 	
+	@SuppressWarnings("deprecation")
 	void run() {
 		
 		panel.add(duckButton);
@@ -28,6 +29,7 @@ public class CutenessTV implements ActionListener {
 		frogButton.setVisible(true);
 		unicornButton.setVisible(true);
 
+		frame.pack();
 		
 		duckButton.setLabel("ducks!");
 		frogButton.setLabel("frogs!");
@@ -69,17 +71,17 @@ public class CutenessTV implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		
-		if(frogButton.getModel().isArmed()) {
+		if(e.getSource() == frogButton) {
 			
 			showFrog();
 		}
 		
-		if(duckButton.getModel().isArmed()) {
+		if(e.getSource() == duckButton) {
 			
 			showDucks();
 		}
 		
-		if(unicornButton.getModel().isArmed()) {
+		if(e.getSource() == unicornButton) {
 			
 			showFluffyUnicorns();
 		}
